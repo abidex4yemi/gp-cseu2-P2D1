@@ -28,7 +28,7 @@ class Dog(Animal):
         self.breed = breed
 
     def __str__(self):
-        return f"Name: {self.name}, Number of legs: {self.number_of_legs}, Breed:  {self.breed}"
+        return f"Name: {self.name}, Breed:  {self.breed}"
 
 
 person = Animal("Bob", 2)
@@ -36,3 +36,13 @@ dog = Dog("Django", 4, "Caucasian Shepherd Dog")
 
 print(person)
 print(dog)
+
+
+class Cat(Animal):
+    def __init__(self, name, number_of_legs, breed, body_size, color):
+        super().__init__(name, number_of_legs, breed)
+        self.body_size = body_size
+        self.color = color
+
+    def __str__(self):
+        return f"body size: {self.body_size}, color: {self.color}"
