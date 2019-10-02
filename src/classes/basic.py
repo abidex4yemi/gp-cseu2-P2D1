@@ -18,7 +18,8 @@ class Animal:
         self.number_of_legs = number_of_legs
 
     def __str__(self):
-        return f"Name: {self.name}, Number of legs: {self.number_of_legs}"
+        return (f"Name: {self.name},"
+                f"Number of legs: {self.number_of_legs}")
 
 
 # Inheriting from Animal
@@ -28,7 +29,11 @@ class Dog(Animal):
         self.breed = breed
 
     def __str__(self):
-        return f"Name: {self.name}, Breed:  {self.breed}"
+        return (
+            f"Name: {self.name}, "
+            f"Breed:  {self.breed} "
+            f"Number of legs: {self.number_of_legs}"
+        )
 
 
 person = Animal("Bob", 2)
@@ -40,9 +45,20 @@ print(dog)
 
 class Cat(Animal):
     def __init__(self, name, number_of_legs, breed, body_size, color):
-        super().__init__(name, number_of_legs, breed)
+        super().__init__(name, number_of_legs)
+
         self.body_size = body_size
         self.color = color
+        self.breed = breed
 
     def __str__(self):
-        return f"body size: {self.body_size}, color: {self.color}"
+        return (
+            f"Name: {self.name}, "f"body size: {self.body_size}, "
+            f" color: {self.color} "
+            f"Breed:  {self.breed} "
+            f"Number of legs: {self.number_of_legs}")
+
+
+my_cat = Cat("Lola", 4, "Manx", "5pounds", "brown")
+
+print(my_cat)
